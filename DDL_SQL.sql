@@ -94,4 +94,22 @@ SELECT * FROM persona WHERE nombre LIKE 'b%'; # una b al inicio.
 SELECT * FROM persona WHERE nombre LIKE '%b'; # una b al final.
 SELECT * FROM persona WHERE nombre LIKE '%b%';# una b en cualquier posición.
 
-# Indicar el número de filas (Agrupaciones).
+# Operaciones de Agrupación en una tabla. (Agrupaciones).
+# Cuántas filas tiene la tabla persona?
+SELECT COUNT(*) FROM persona;
+# IDEAL: Consulta óptima.
+SELECT COUNT(id) FROM persona;
+# IDEAL + ALIAS.
+SELECT COUNT(ID) AS TOTAL_FILAS FROM persona;
+# Mostrar columna nombre como "name_".
+SELECT nombre AS name_ FROM persona;
+# Mostrar la fecha máxima - ó la fecha más reciente.
+SELECT MAX(fecha_nacimiento) FROM persona;
+# Mostrar la fecha mínima. Mostrar la fecha de nacimiento más antigua
+SELECT MIN(fecha_nacimiento) AS fecha_mas_antigua FROM persona;
+
+#SUMAR TODAS LAS EDADES ACTUALES y las estaturas de las personas.
+SELECT SUM(edad_actual) as SUMA_edades, SUM(estatura) FROM persona;
+
+# MOSTRAR EL PROMEDIO DE LAS ESTATURAS.
+SELECT AVG(estatura) AS PROMEDIO_ESTATURA FROM persona;

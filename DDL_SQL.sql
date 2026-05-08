@@ -62,7 +62,13 @@ SELECT * FROM persona;
 SELECT * FROM persona LIMIT 2;
 
 #Elegir columnas específicas: Por ej: rut, nombre, apellido
-SELECT rut, nombre, apellido FROM persona;
+SELECT rut, nombre, apellido FROM persona LIMIT 2;
+
+# Ordenar de mayor a menor. // Traer los últ. 10 registros.
+SELECT * FROM persona order by id DESC;
+
+# Ordenar de menor a mayor.
+SELECT * FROM persona order by fecha_nacimiento ASC;
 
 
 

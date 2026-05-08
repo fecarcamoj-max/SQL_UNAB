@@ -113,3 +113,21 @@ SELECT SUM(edad_actual) as SUMA_edades, SUM(estatura) FROM persona;
 
 # MOSTRAR EL PROMEDIO DE LAS ESTATURAS.
 SELECT AVG(estatura) AS PROMEDIO_ESTATURA FROM persona;
+
+# Group By. # Stand By...
+SELECT * FROM persona;
+#Muestra cuántas veces aparece un apellido en específico.
+SELECT apellido, count(*) FROM persona; #Respuesta INCORRECTA.
+#respuesta correcta con GROUP BY:
+SELECT apellido, count(*) FROM persona
+GROUP BY apellido;
+#Mostrar cuántas veces aparece un apellido, cuál es el promedio de 
+#estatura por apellido con el total de filas al final.
+SELECT apellido, count(*) as filas, avg(estatura) prom_est 
+FROM persona
+GROUP BY apellido WITH ROLLUP;
+
+INSERT persona (rut, nombre, apellido, fecha_nacimiento, fecha_hora_registro,
+estatura, edad_actual, rol) VALUES
+("111", "rop", "POV", "2023-01-01", NULL, 1.60, 30, "admin"),
+("222", "raf", "POV", "2019-01-01", NULL, 1.70, 40, "KAM");

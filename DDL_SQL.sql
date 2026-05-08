@@ -70,5 +70,14 @@ SELECT * FROM persona order by id DESC;
 # Ordenar de menor a mayor.
 SELECT * FROM persona order by fecha_nacimiento ASC;
 
+SELECT * FROM persona;
+# Filtros de información "WHERE".
+# Mostrar a la persona de RUT 456
+SELECT * FROM persona WHERE rut = "456";
 
+# Mostrar a las personas que midan más de 1.60 mts
+SELECT * FROM persona WHERE estatura > 1.60;
+# Mostrar a las personas que midan igual o más que 1.51
+SELECT * FROM persona WHERE estatura >= 1.51;
+# Mostrar a las personas que midan entre 1.50 y 1.75
 

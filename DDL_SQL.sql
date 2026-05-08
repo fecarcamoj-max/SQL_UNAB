@@ -79,5 +79,19 @@ SELECT * FROM persona WHERE rut = "456";
 SELECT * FROM persona WHERE estatura > 1.60;
 # Mostrar a las personas que midan igual o más que 1.51
 SELECT * FROM persona WHERE estatura >= 1.51;
-# Mostrar a las personas que midan entre 1.50 y 1.75
+# Mostrar a las personas que midan entre 1.50 y 1.75 # + CONECTOR LÓGICO Y
+SELECT * FROM persona WHERE estatura >= 1.50 AND estatura <= 1.75;
+SELECT * FROM persona WHERE estatura between 1.50 AND 1.75; #>=1.50 y < 1.75
 
+# Conector Lógico O - OR. 
+# Mostrar a las personas que tengan por nombre rob ó bob
+SELECT * FROM persona WHERE nombre = "rob" OR nombre = "bob";
+SELECT * FROM persona WHERE nombre in ("rob", "bob"); # Contener
+
+# Like.
+# Mostrar a las personas que contengan una letra "b" en su nombre.
+SELECT * FROM persona WHERE nombre LIKE 'b%'; # una b al inicio.
+SELECT * FROM persona WHERE nombre LIKE '%b'; # una b al final.
+SELECT * FROM persona WHERE nombre LIKE '%b%';# una b en cualquier posición.
+
+# Indicar el número de filas (Agrupaciones).

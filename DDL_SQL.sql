@@ -48,3 +48,21 @@ VALUES
 ("321", "rob", "stark", "2024-02-02", "2025-04-01 00:00:00", 1.710)
 ;
 
+INSERT persona 
+(rut, nombre, apellido, fecha_nacimiento, fecha_hora_registro, estatura) 
+VALUES
+("456", "TOP", "stark", "2025-03-01", "2021-05-07 13:12:00", 1.49),
+("567", "IAN", "stark", "2024-04-02", "2019-04-01 00:00:00", 1.51)
+;
+
+### DML Lenguaje de manipulación de datos:
+SELECT * FROM persona;
+
+#Limit: Ver las primeras 2 filas
+SELECT * FROM persona LIMIT 2;
+
+#Elegir columnas específicas: Por ej: rut, nombre, apellido
+SELECT rut, nombre, apellido FROM persona;
+
+
+

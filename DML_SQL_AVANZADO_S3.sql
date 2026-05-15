@@ -84,3 +84,27 @@ SELECT * FROM id_persona_venta;
 SELECT * FROM persona
 WHERE id_persona IN (SELECT id_persona FROM id_persona_venta);
 
+# Consultas Anidadas:::::
+SELECT * FROM (SELECT nombre, correo FROM persona) as P;
+
+# JOIN Consulta anidada::
+
+SELECT * FROM ventas v
+INNER JOIN 
+	(
+		SELECT id_persona, nombre FROM persona order by id_persona DESC
+        limit 2
+        ) p
+ON v.id_persona = p.id_persona;
+
+# Creación de vista::::
+CREATE VIEW ultimos_clientes_ventas as
+SELECT v.*, p.nombre FROM ventas as v
+INNER JOIN 
+	(
+		SELECT id_persona, nombre FROM persona order by id_persona DESC
+        limit 2
+        ) as p
+ON v.id_persona = p.id_persona;
+
+SELECT * FROM ultimos_clientes_ventas;
